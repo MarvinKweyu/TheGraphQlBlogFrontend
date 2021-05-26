@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header>
+    <header class="d-flex justify-content-center">
       <router-link to="/">
         <h1>Marvin's Blog</h1>
       </router-link>
