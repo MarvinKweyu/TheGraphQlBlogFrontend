@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import gql from "graphql-tag";
 import AuthorLink from "@/components/AuthorLink";
 
 export default {

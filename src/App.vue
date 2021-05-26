@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <router-link to="/">
-        <h1>Awesome Blog</h1>
+        <h1>Marvin's Blog</h1>
       </router-link>
     </header>
     <router-view />

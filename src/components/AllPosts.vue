@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import gql from "graphql-tag";
 import PostList from "@/components/PostList";
 
 export default {
@@ -39,6 +40,7 @@ export default {
       `,
     });
     this.allPosts = posts.data.allPosts;
+    console.log("all posts", this.allPosts);
   },
   data() {
     return {
