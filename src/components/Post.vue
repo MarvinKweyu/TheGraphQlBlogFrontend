@@ -28,6 +28,36 @@ export default {
       post: null,
     };
   },
+  async created() {
+    const post = await this.$apollo.query({
+      query: gql`
+        query($slug: String!) {
+          postBySlug(slug: $slug) {
+            title
+            subtitle
+            publishDate
+            metaDescription
+            slug
+            body
+            author {
+              user {
+                username
+                firstName
+                lastName
+              }
+            }
+            tags {
+              name
+            }
+          }
+        }
+      `,
+      variables: {
+        slug: this.$route.params.slug,
+      },
+    });
+    this.post = post.data.postBySlug;
+  },
   methods: {
     displayableDate(date) {
       return new Intl.DateTimeFormat("en-US", { dateStyle: "full" }).format(
